@@ -1,0 +1,45 @@
+{
+  "manifest_version": 2,
+
+      "name": "翻译(可开关)",
+    "version": "1.0.1",
+    "manifest_version": 2,
+    "description": "翻译网页上的文本",
+	"update_url":"https://raw.githubusercontent.com/zhongwf/translate/master/updates.xml",
+
+    "icons": {
+        "128": "images/logo.png"
+    },
+
+		"background": {
+        "scripts": ["js/background.js"]
+    },
+	    "content_scripts": [
+        {
+            "matches": ["http://*/*","https://*/*"],
+            "js": ["js/main.js"],
+            "run_at": "document_end",
+            "all_frames": true
+        }
+    ],
+  
+  "browser_action": {
+    "default_icon": "images/logo.png",
+	"default_title": "翻译(可开关)",
+	"default_popup": "popup.html"
+  },  
+  
+  "permissions": [
+    "activeTab",
+		"tabs",
+        "notifications",
+        "cookies",
+        "webRequest",
+        "webRequestBlocking",
+        "http://*/*",
+		"https://*/*",
+		"storage"
+  ]
+  
+
+}
